@@ -41,7 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers\API'], function () {
        Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function () {
            Route::post('/', 'IndexController');
            Route::post('/store', 'StoreController');
-           Route::post('/{tag}', 'IndexController');
+           Route::post('/{tag}', 'ShowController');
            Route::put('/{tag}', 'UpdateController');
            Route::delete('/{tag}','DestroyController');
        });
@@ -49,7 +49,7 @@ Route::group(['namespace' => 'App\Http\Controllers\API'], function () {
         Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
             Route::post('/', 'IndexController');
             Route::post('/store', 'StoreController');
-            Route::post('/{category}', 'IndexController');
+            Route::post('/{category}', 'ShowController');
             Route::put('/{category}', 'UpdateController');
             Route::delete('/{category}','DestroyController');
         });
@@ -57,7 +57,7 @@ Route::group(['namespace' => 'App\Http\Controllers\API'], function () {
         Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
             Route::post('/', 'IndexController');
             Route::post('/store', 'StoreController')->name('api.admin.post.store');
-            Route::post('/{post}', 'IndexController');
+            Route::post('/{post}', 'ShowController');
             Route::patch('/{post}', 'UpdateController')->name('api.admin.post.update');
             Route::delete('/{post}','DestroyController');
         });
@@ -65,7 +65,7 @@ Route::group(['namespace' => 'App\Http\Controllers\API'], function () {
         Route::group(['namespace' => 'User', 'prefix' => 'users'], function () {
             Route::post('/', 'IndexController');
             Route::post('/store', 'StoreController');
-            Route::post('/{user}', 'IndexController');
+            Route::post('/{user}', 'ShowController');
             Route::patch('/{user}', 'UpdateController');
             Route::delete('/{user}','DestroyController');
         });

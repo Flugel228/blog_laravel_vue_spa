@@ -35,7 +35,7 @@
                 <a href="{{ route('admin.main.index') }}" class="nav-link">Главная</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{--{{ route('main.index') }}--}}" class="nav-link">Выйти</a>
+                <a href="/" class="nav-link">Выйти</a>
             </li>
         </ul>
 

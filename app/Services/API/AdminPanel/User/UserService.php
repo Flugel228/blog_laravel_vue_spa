@@ -37,6 +37,8 @@ class UserService
         if (!User::where('email', '=', $user->email)->first()) {
             return 404;
         }
+        $user->userComments()->delete();
+        $user->likedPosts()->detach();
         $user->delete();
         return 200;
     }

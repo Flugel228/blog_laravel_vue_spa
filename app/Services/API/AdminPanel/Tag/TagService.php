@@ -34,7 +34,7 @@ class TagService
         {
             return 404;
         }
-        PostTag::where('tag_id', '=', $tag->id)->delete();
+        $tag->posts()->detach();
         $tag->delete();
         return 200;
     }

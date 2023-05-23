@@ -160,13 +160,6 @@ export default {
         user: {},
     }),
 
-    mounted() {
-        this.getAccessToken()
-        if (this.accessToken) {
-            this.getUser()
-        }
-    },
-
     methods: {
         getAccessToken() {
             this.accessToken = localStorage.getItem('access_token')
@@ -176,7 +169,9 @@ export default {
             api.post('http://localhost:8876/api/auth/me')
                 .then(res => {
                     this.user = res.data.user
-                })
+                }).catch(error => {
+                console.log(error);
+            })
         },
         logout() {
             api.post('http://localhost:8876/api/auth/logout')
@@ -191,7 +186,7 @@ export default {
 
     updated() {
         this.getAccessToken()
-        if (this.accessToken) {
+        if (localStorage.getItem('access_token')) {
             this.getUser()
         }
     }

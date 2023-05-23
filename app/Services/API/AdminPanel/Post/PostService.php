@@ -65,7 +65,9 @@ class PostService
         {
             return 404;
         }
-        $post->tags()->sync([]);
+        $post->tags()->detach();
+        $post->postComments()->delete();
+        $post->likedUsers()->delete();
         $post->delete();
         return 200;
     }

@@ -119,7 +119,6 @@ export default {
     getUser() {
       api.post('http://127.0.0.1:8876/api/auth/me')
           .then(res => {
-            console.log(res);
             this.user = res.data.user
             this.roles = res.data.roles
             this.likes = res.data.likes

@@ -67,7 +67,9 @@ router.beforeEach((to, from, next) => {
 
     const accessToken = localStorage.getItem('access_token')
 
-    if (to.name === 'main.user') {
+    if (to.name === 'main.user' ||
+        to.name === 'main.user.likes.index' ||
+        to.name === 'main.user.comments.index') {
         if (!accessToken) {
             return next({name: 'main.signin'})
         }
