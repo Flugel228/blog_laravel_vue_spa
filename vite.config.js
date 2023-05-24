@@ -3,11 +3,14 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    base: '',
     plugins: [
         laravel({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/css/app.css',
+                'resources/js/app_front.js'
             ],
             refresh: true,
         }),
