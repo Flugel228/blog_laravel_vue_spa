@@ -140,7 +140,7 @@ export default {
       api.post(`http://127.0.0.1:8876/api/posts/${id}/likes/store`)
           .then(res => {
             if (res.status === 200) {
-              this.get(this.pages.current_page)
+              this.get(this.pages.current_page, this.category)
             }
           }).catch(error => {
         if (error.response.status === 401) {
