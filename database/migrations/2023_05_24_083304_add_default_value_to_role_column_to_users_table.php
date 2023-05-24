@@ -16,7 +16,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedSmallInteger('role')->default(0);
+            $table->unsignedSmallInteger('role')->default(0)->after('name');
         });
     }
 
@@ -30,7 +30,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedSmallInteger('role')->nullable();
+            $table->unsignedSmallInteger('role')->nullable()->after('name');
         });
     }
 };
