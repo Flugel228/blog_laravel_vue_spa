@@ -67,7 +67,7 @@ class PostService
         }
         $post->tags()->detach();
         $post->postComments()->delete();
-        $post->likedUsers()->delete();
+        $post->likedUsers()->detach();
         $post->delete();
         return 200;
     }

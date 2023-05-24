@@ -43,7 +43,7 @@
               </div>
               <div class="row">
                 <div class="col-md-8 ml-5">
-                  <h5> {{ user.role === 1 ? 'Reader' : 'Admin' }}</h5>
+                  <h5> {{ user.role === 0 ? 'Reader' : 'Admin' }}</h5>
                 </div>
               </div>
             </div>

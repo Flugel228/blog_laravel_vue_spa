@@ -50,8 +50,8 @@ export default {
     }),
 
     methods: {
-        async login() {
-            await axios.post('http://127.0.0.1:8876/api/auth/login', {
+         login() {
+             axios.post('http://localhost:8876/api/auth/login', {
                 email: this.email,
                 password: this.password
             }).then(res => {
@@ -59,6 +59,7 @@ export default {
                 document.cookie = "jwt=" + res.data.access_token + "; path=/";
                 this.$router.push({name: 'main.index.index'})
             }).catch(error => {
+                console.log(error);
                 if (error.response.data.error === 'Unauthorized') {
                     alert('The email or password was entered incorrectly.')
                 }
