@@ -79,7 +79,8 @@ export default {
                     alert('The user with this email already exists.')
                 }
             })
-        }
+        },
+
     }
 }
 </script>
