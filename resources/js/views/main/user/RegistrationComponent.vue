@@ -118,7 +118,7 @@ export default {
         },
         validateData() {
             for (let message in this.errorMessages) {
-                this.errorMessages.message = ''
+                this.errorMessages[message] = ''
             }
             this.errors.email = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.email)
             this.errors.password = !/^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d!@#$%^&*()_+=[\]{}|\\;:'",.<>/?`~\-]{8,128}$/.test(this.password)
