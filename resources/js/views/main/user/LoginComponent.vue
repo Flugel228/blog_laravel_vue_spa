@@ -60,7 +60,7 @@ export default {
                 this.$router.push({name: 'main.index.index'})
             }).catch(error => {
                 console.log(error);
-                if (error.response.data.error === 'Unauthorized') {
+                if (error.response.data.message === 'Session store not set on request.') {
                     alert('The email or password was entered incorrectly.')
                 }
             })
