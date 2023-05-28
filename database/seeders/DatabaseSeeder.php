@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Post;
 use App\Models\PostUserLike;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,14 +28,7 @@ class DatabaseSeeder extends Seeder
             $tagsIds = $tags->random(5)->pluck('id');
             $post->tags()->attach($tagsIds);
         }
-
+        User::factory(150)->create();
         Comment::factory(5000)->create();
-        PostUserLike::factory(849)->create();
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
